@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+@use 'theme';
+@use 'material.overrides' as matOverrides;
+
+@include mat.core();
+@include mat.all-component-themes(theme.$theme);
+@include mat.all-component-densities(-2);
+@include mat.button-density(0);
+
+@include matOverrides.applyOverrides();
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #323232;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,67 @@
+@use "@angular/material" as mat;
+@use "src/styles/theme" as theme;
+
+
+:host {
+  width: min(800px, 100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  grid-gap: 3rem;
+
+  //section.main-section {
+  //  display: flex;
+  //  grid-gap: 1rem;
+  //  width: 100%;
+  //}
+  //section.search-area {
+  //  display: flex;
+  //  flex-direction: column;
+  //  grid-gap: 1rem;
+  //  width: 100%;
+  //  .search {
+  //    display: flex;
+  //    grid-gap: 1rem;
+  //    align-items: center;
+  //    .search-field {
+  //      flex-grow: 1;
+  //    }
+  //  }
+  //}
+
+
+  mat-card {
+    padding: 1rem 1.5rem;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .error {
+    background-color: map-get(theme.$warn, A100);
+  }
+  .fact {
+    //background-color: map-get(theme.$theme, background, card);
+  }
+
+  .controls {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    grid-gap: .5rem;
+  }
+}
+
+
+
+.larger-icon {
+  font-size: x-large;
+}

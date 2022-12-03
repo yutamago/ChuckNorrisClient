@@ -1,0 +1,30 @@
+@use "theme";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1rem;
+  width: 100%;
+}
+
+.search {
+  display: flex;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+.search-field {
+  flex-grow: 1;
+}
+
+mat-card {
+  padding: 1rem 1.5rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+.error{
+  color: map-get(theme.$warn, 500);
+}

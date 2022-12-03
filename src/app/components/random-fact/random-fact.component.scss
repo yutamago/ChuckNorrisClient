@@ -1,0 +1,36 @@
+@use "@angular/material" as mat;
+@use "src/styles/theme" as theme;
+
+:host {
+  display: flex;
+  grid-gap: 1rem;
+  width: 100%;
+}
+
+mat-card {
+  padding: 1rem 1.5rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+.fact {
+  //background-color: map-get(theme.$theme, background, card);
+}
+
+.controls {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  grid-gap: .5rem;
+}
+
+
+.larger-icon {
+  font-size: x-large;
+}
+
+.error {
+  color: map-get(theme.$warn, 500);
+}

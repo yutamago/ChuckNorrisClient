@@ -1,0 +1,36 @@
+<mat-card [class.fact]="!error" [class.error]="error">
+  <ng-container *ngIf="error; else factTmpl">{{error}}</ng-container>
+
+  <ng-template #factTmpl>
+    <ng-container *ngIf="fact; else loadingTmpl">
+      {{fact.value}}
+    </ng-container>
+    <ng-template #loadingTmpl>
+      <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
+    </ng-template>
+  </ng-template>
+</mat-card>
+
+<div class="controls">
+  <button
+    type="button"
+    mat-raised-button
+    color="primary"
+    (click)="loadRandomFact()"
+    class="centered-button"
+  >
+    <span class="larger-icon">🎲</span>&nbsp;Another!
+  </button>
+
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
+    <mat-label>Category</mat-label>
+    <mat-select [(value)]="selectedCategory" >
+      <mat-option *ngFor="let category of categories" [value]="category">
+        {{category | firstLetterUppercase}}
+      </mat-option>
+    </mat-select>
+    <button type="button" [disabled]="!selectedCategory" matSuffix mat-icon-button (click)="selectedCategory = undefined; $event.stopPropagation()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>

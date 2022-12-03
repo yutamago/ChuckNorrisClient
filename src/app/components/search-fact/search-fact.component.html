@@ -1,0 +1,21 @@
+<div class="search">
+  <mat-form-field appearance="outline" subscriptSizing="dynamic" class="search-field">
+    <mat-label>Search...</mat-label>
+    <input matInput type="text" (keydown.enter)="search()" [(ngModel)]="searchInput">
+  </mat-form-field>
+  <button type="button" mat-icon-button color="primary" (click)="search()">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="error; else searchResultsTmpl" class="error">{{error}}</div>
+<ng-template #searchResultsTmpl>
+  <mat-card class="search-result" *ngIf="searchResults">
+    <ng-container *ngIf="searchResults.total > 0; else noResults">
+      {{searchResults.result[0].value}}
+    </ng-container>
+    <ng-template #noResults>
+      Chuck Norris is too awesome for your search query! Try another!
+    </ng-template>
+  </mat-card>
+</ng-template>

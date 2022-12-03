@@ -1,0 +1,80 @@
+@use '@angular/material' as mat;
+
+$shirt-palette: (
+  50 : #f4f5f9,
+  100 : #e3e6ef,
+  200 : #d0d6e4,
+  300 : #bdc6d9,
+  400 : #aeb9d1,
+  500 : #a0adc9,
+  600 : #98a6c3,
+  700 : #8e9cbc,
+  800 : #8493b5,
+  900 : #7383a9,
+  A100 : #ffffff,
+  A200 : #f5f8ff,
+  A400 : #c2d4ff,
+  A700 : #a8c2ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+$hair-palette: (
+  50 : #f0e9e6,
+  100 : #dbc7c0,
+  200 : #c3a297,
+  300 : #aa7c6d,
+  400 : #98604d,
+  500 : #86442e,
+  600 : #7e3e29,
+  700 : #733523,
+  800 : #692d1d,
+  900 : #561f12,
+  A100 : #ffa18f,
+  A200 : #ff765c,
+  A400 : #ff4b29,
+  A700 : #ff360f,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$primary: mat.define-palette($shirt-palette, 700);
+$accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$warn: mat.define-palette(mat.$red-palette);
+$theme: mat.define-dark-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  )
+));
+
+
+$card-border-radius: var(--mdc-protected-button-container-shape, var(--mdc-shape-small, 4px));
